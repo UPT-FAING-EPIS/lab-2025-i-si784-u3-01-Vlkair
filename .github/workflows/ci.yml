@@ -45,9 +45,9 @@ jobs:
         run: dotnet tool install -g dotnet-sonarscanner
       - name: Ejecutar escaneo
         run: | 
-          dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.login="${{ secrets.lab1token }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
-          dotnet-sonarscanner end /d:sonar.login="${{ secrets.lab1token }}"
+          dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: Install Living Doc
         run: dotnet tool install -g SpecFlow.Plus.LivingDoc.CLI
       - name: Generate living doc
