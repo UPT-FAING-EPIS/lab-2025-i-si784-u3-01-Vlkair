@@ -2,7 +2,7 @@ name: Tarea Automatizada de ejecución de pruebas
 
 env:
   DOTNET_VERSION: '8.x'                     # la versión de .NET
-  SONAR_ORG: 'victor williams cruz mamani'                    # Nombre de la organización de sonar cloud
+  SONAR_ORG: 'vlkair'                    # Nombre de la organización de sonar cloud
   SONAR_PROJECT: 'vlkair_bancaapp'        # Key ID del proyecto de sonar
 on:
   push:
@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Configurando la versión de NET
-        uses: actions/setup-dotnet@v4
-        with:
-          java-version: ${{ env.DOTNET_VERSION }}
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'

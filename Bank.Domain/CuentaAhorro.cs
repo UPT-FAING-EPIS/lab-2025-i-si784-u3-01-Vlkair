@@ -4,8 +4,8 @@
     {
         public const string ERROR_MONTO_MENOR_IGUAL_A_CERO = "El monto no puede ser menor o igual a 0";
         public int IdCuenta { get; private set; }
-        public string NumeroCuenta { get; private set; }
-        public virtual Cliente Propietario { get; private set; }
+        public string NumeroCuenta { get; private set; } = string.Empty;
+        public virtual Cliente Propietario { get; private set; } = null!;
         public int IdPropietario { get; private set; }
         public decimal Tasa { get; private set; }
         public decimal Saldo { get; private set; }
